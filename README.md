@@ -1,2 +1,0 @@
-# IPM
-Impression Prediction Model
