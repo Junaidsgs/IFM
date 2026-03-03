@@ -20,7 +20,7 @@ Some use cases can be:
 
 1. **Data Collection & Integration:** Collect all time-series data into a Google Sheet file.
 2. **Preprocessing:** Determine the best way to preprocess the data (Handling missing dates, smoothing ratings, etc.).
-   - See [Data Preprocessing Guide](resources/data_preprocessing.md) or [PDF Version](resources/data_preprocessing_v2.pdf).
+   - See [Data Preprocessing Guide](resources/data_preprocessing.md).
 3. **Data Splitting:** Split the data into training and test sets. **Note: Time-series data must be split by time, not randomly.**
 4. **Baseline Modeling:** Run traditional regression algorithms to create the initial model.
 5. **Advanced Modeling:** Research and implement subsequent models (LSTM, ARIMA, etc.).
