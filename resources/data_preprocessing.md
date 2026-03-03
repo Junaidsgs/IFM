@@ -1,5 +1,7 @@
 # Google Play Data Extraction & Integration Pipeline
 
+**Authors:** Junaid Ahmad ([ja4893@rit.edu](mailto:ja4893@rit.edu)), Fardin Anam Aungon ([fa4111@rit.edu](mailto:fa4111@rit.edu)), and Subash Velmurugan ([sv9252@g.rit.edu](mailto:sv9252@g.rit.edu))
+
 This document outlines the process for extracting game metrics from the Google Play Developer Console, organizing the data, and automating the upload to Google Sheets for further analysis and modeling.
 
 ---
@@ -78,7 +80,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
 ### Execution
 Use the following script to upload folders sequentially to your spreadsheet:
-*   **Script:** [upload_to_sheets.py](./upload_to_sheets.py)
+*   **Script:** [code/upload_to_sheets_temp.py](../code/upload_to_sheets_temp.py)
 
 ---
 
@@ -90,8 +92,19 @@ Combine information into a single master database by linking the main sheet to t
 ### Data Cleanup & Normalization
 Google Play reports often omit rows for days with zero activity (e.g., zero crashes or zero ratings). These gaps must be filled before feeding data into models.
 
-1.  **Missing Rows:** Use the cleanup script to inject missing dates into the sequence.
-2.  **Ratings Smoothing:** For days with no new ratings, the average rating might appear as `NA`. To fix this, we use the **cumulative average rating** from the previous available data point.
+1.  **Missing Rows (Date Infilling):** Use the cleanup script to inject missing dates into the sequence.
+    *   **Script:** [code/csv_clean.py](../code/csv_clean.py)
+    *   **Usage:** 
+        ```bash
+        python code/csv_clean.py input.csv -o output.csv -d Date
+        ```
+
+2.  **Ratings Smoothing & NA Fixes:** For days with no new ratings, the average rating might appear as `NA`. This script fixes NAs by taking values from adjacent cells or forward-filling and injects missing dates.
+    *   **Script:** [code/fix_ratings.py](../code/fix_ratings.py)
+    *   **Usage:**
+        ```bash
+        python code/fix_ratings.py input_ratings.csv -o output_ratings.csv -d Date
+        ```
 
 ---
 **Next Step:** Once cleanup is complete, the data is ready for model training and inference.

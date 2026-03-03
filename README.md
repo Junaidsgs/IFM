@@ -1,5 +1,7 @@
 # Impression Forecast Model (IFM)
 
+**Authors:** Junaid Ahmad ([ja4893@rit.edu](mailto:ja4893@rit.edu)), Fardin Anam Aungon ([fa4111@rit.edu](mailto:fa4111@rit.edu)), and Subash Velmurugan ([sv9252@g.rit.edu](mailto:sv9252@g.rit.edu))
+
 ## Problem Statement:
 
 To develop a time-series regression model that predicts the number of downloads for an application on day T, given a feature vector X representing the preceding n days of historical data.
