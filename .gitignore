@@ -1,2 +1,5 @@
 .DS_Store
 GEMINI.md
+*.pth
+__pycache__/
+.venv/
