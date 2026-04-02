@@ -23,7 +23,7 @@ Some use cases can be:
    - See [Data Preprocessing Guide](resources/data_preprocessing.md).
 3. **Data Splitting:** Split the data into training and test sets. **Note: Time-series data must be split by time, not randomly.**
 4. **Baseline Modeling:** Run traditional regression algorithms to create the initial model.
-5. **Advanced Modeling:** Research and implement subsequent models (LSTM, ARIMA, etc.).
+5. **Advanced Modeling:** Research and implement subsequent models (LSTM, BiLSTM, etc.).
 6. **State-of-the-Art Implementation:** Run the data through **Facebook’s Prophet** model.
 7. **Evaluation:** Evaluate the results using time-series metrics (MAE, MSE, Huber Loss).
 

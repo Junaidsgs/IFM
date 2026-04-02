@@ -1,5 +1,8 @@
 .DS_Store
 GEMINI.md
 *.pth
+*.pkl
+*_model_meta.json
 __pycache__/
 .venv/
+code/models/arima/Temp
