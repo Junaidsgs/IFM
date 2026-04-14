@@ -1,0 +1,22 @@
+{
+  "features": [
+    "rating",
+    "crashes",
+    "device_installs",
+    "device_uninstalls",
+    "user_uninstalls",
+    "active_installs",
+    "anrs",
+    "is_weekend"
+  ],
+  "target_col": "Daily User Installs",
+  "roll_period": 7,
+  "train_ratio": 0.8,
+  "changepoint_prior_scale": 1.0,
+  "seasonality_prior_scale": 10,
+  "seed": 42,
+  "model_type": "Prophet",
+  "mae": 1474.032055036287,
+  "rmse": 1884.5142645015371,
+  "mape": 5.181544491181551
+}
